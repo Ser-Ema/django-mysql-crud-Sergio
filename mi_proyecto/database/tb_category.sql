@@ -1,3 +1,4 @@
+-- SQLBook: Code
 -- phpMyAdmin SQL Dump
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
@@ -31,7 +32,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `tb_category` (
   `category_id` int(11) NOT NULL,
   `category_name` varchar(100) NOT NULL,
-  `is_deleted` int(11) NOT NULL
+  `is_deleted` int(11) NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -60,7 +61,11 @@ ALTER TABLE `tb_category`
 -- AUTO_INCREMENT for table `tb_category`
 --
 ALTER TABLE `tb_category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, 
+--   Alter COLUMN `is_deleted` SET DEFAULT 0,
+  AUTO_INCREMENT=9;
+-- ALTER TABLE `tb_category`
+--     Alter COLUMN `is_deleted` SET NULL DEFAULT 0;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
